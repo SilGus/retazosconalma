@@ -495,9 +495,15 @@ summary:focus-visible {
 }
 
 .media-frame--sheet {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-sm);
   box-shadow: none;
+}
+
+.media-frame--sheet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .media-frame--gallery {
