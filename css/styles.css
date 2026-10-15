@@ -26,7 +26,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -51,7 +51,8 @@ h3 { font-size: 1.35rem; }
 .eyebrow, .kicker {
   margin-bottom: 12px;
   color: var(--wine);
-  font-size: .78rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   font-weight: 800;
   letter-spacing: .11em;
   text-transform: uppercase;
@@ -90,14 +91,14 @@ h3 { font-size: 1.35rem; }
 .hero__facts li { padding-inline: 8px; border-right: 1px solid var(--line); }
 .hero__facts li:last-child { border: 0; }
 .hero__facts strong { display: block; color: var(--forest); font-family: var(--serif); font-size: 1.7rem; line-height: 1; }
-.hero__facts span { display: block; margin-top: 6px; color: var(--muted); font-size: .75rem; line-height: 1.25; }
+.hero__facts span { display: block; margin-top: 6px; color: var(--muted); font-size: 1rem; line-height: 1.25; }
 
 .price-box { display: flex; margin: 28px auto 20px; flex-direction: column; align-items: center; gap: 2px; }
 .price-box strong { color: var(--wine); font-family: var(--serif); font-size: 2.55rem; line-height: 1; }
-.price-box__before { color: var(--muted); font-size: .9rem; text-decoration: line-through; }
-.price-box__saving { color: var(--forest); font-size: .88rem; font-weight: 800; }
+.price-box__before { color: var(--muted); font-size: 1.1rem; text-decoration: line-through; }
+.price-box__saving { color: var(--forest); font-size: 1.2rem; font-weight: 800; }
 
-.button { display: inline-flex; min-height: 54px; width: 100%; align-items: center; justify-content: center; border: 0; border-radius: 12px; padding: 13px 22px; font-weight: 800; line-height: 1.2; text-align: center; text-decoration: none; transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease; }
+.button { display: inline-flex; min-height: 54px; width: 100%; align-items: center; justify-content: center; border: 0; border-radius: 12px; padding: 13px 22px; font-size: 1.5rem; font-weight: 800; line-height: 1.2; text-align: center; text-decoration: none; transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease; }
 .button:hover { transform: translateY(-1px); }
 .button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .button--primary { background: var(--wine); box-shadow: 0 12px 26px rgba(125, 38, 56, .22); color: white; }
