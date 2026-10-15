@@ -3,41 +3,33 @@
 
   const body = document.body;
   const checkoutUrl = body.dataset.checkoutUrl.trim();
-  const checkoutLinks = document.querySelectorAll("[data-checkout]");
-  const stickyCta = document.querySelector("[data-sticky-cta]");
-  const offerSection = document.getElementById("oferta");
+  const stickyBuy = document.querySelector("[data-sticky-buy]");
+  const offer = document.getElementById("oferta");
 
   document.querySelectorAll("[data-current-year]").forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
 
   if (checkoutUrl) {
-    checkoutLinks.forEach((link) => {
+    document.querySelectorAll("[data-checkout]").forEach((link) => {
       link.href = checkoutUrl;
     });
   }
 
-  const updateStickyCta = () => {
-    if (!stickyCta) return;
-    stickyCta.classList.toggle("is-visible", window.scrollY > 520);
-    body.classList.toggle("has-sticky-cta", window.scrollY > 520);
+  const updateStickyBuy = () => {
+    if (!stickyBuy) return;
+    const visible = window.scrollY > 680;
+    stickyBuy.classList.toggle("is-visible", visible);
+    body.classList.toggle("has-sticky-buy", visible);
   };
 
-  updateStickyCta();
-  window.addEventListener("scroll", updateStickyCta, { passive: true });
+  updateStickyBuy();
+  window.addEventListener("scroll", updateStickyBuy, { passive: true });
 
-  if (stickyCta && offerSection && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        stickyCta.hidden = entry.isIntersecting;
-      },
-      { threshold: 0.18 }
-    );
-
-    observer.observe(offerSection);
+  if (stickyBuy && offer && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      stickyBuy.hidden = entry.isIntersecting;
+    }, { threshold: 0.2 });
+    observer.observe(offer);
   }
-
-  document.querySelectorAll("[data-policy]").forEach((link) => {
-    link.setAttribute("aria-label", `${link.textContent.trim()} — pendiente de incorporar`);
-  });
 })();
